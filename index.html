@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio di uno studente developer e drone pilot - Competenze in C#, C++, droni DJI, video production">
+        <title>Portfolio | Student Developer & Drone Pilot</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- EmailJS SDK -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    </head>
+    
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Samuele Portfolio</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Progetti</a></li>
+                <li><a href="#contact" class="nav-link">Contatti</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Student Developer</span>
+                    <span class="hero-title-line">& Drone Pilot</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Studente di Tecnico Informatico appassionato di programmazione, elettronica e videografia aerea.
+                    In preparazione per Ingegneria Informatica al Politecnico di Torino.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Esplora Progetti</a>
+                    <a href="#contact" class="btn btn-secondary">Contattami</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="about-image-wrapper">
+                        <img src="me.JPG" alt="Foto profilo" loading="lazy">
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h2 class="section-title">Chi Sono</h2>
+                    <p class="about-text">
+                        Mi chiamo Samuele, sono uno studente del 4° anno di tecnico informatico a Torino, con una forte passione per la tecnologia 
+                        e l'innovazione. Attualmente mi sto preparando per l'esame di ammissione al Politecnico di Torino, 
+                        corso di Ingegneria Informatica.
+                    </p>
+                    <p class="about-text">
+                        La mia curiosità mi ha portato ad esplorare diverse aree dell'informatica: dalla programmazione 
+                        object-oriented in C# allo sviluppo su Arduino, dal networking con Cisco Packet Tracer alla 
+                        videografia aerea con droni professionali.
+                    </p>
+                    <p class="about-text">
+                        Sono un autodidatta determinato, sempre alla ricerca di nuove sfide che mi permettano di crescere 
+                        sia tecnicamente che personalmente. Problem-solving e apprendimento continuo sono i pilastri del 
+                        mio approccio.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎓</div>
+                            <div class="highlight-text">
+                                <h4>Educazione</h4>
+                                <p>tecnico informatico, Torino</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-text">
+                                <h4>Obiettivo</h4>
+                                <p>Politecnico di Torino</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-text">
+                                <h4>Focus</h4>
+                                <p>Ingegneria Informatica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <h2 class="section-title text-center reveal-fade">Competenze Tecniche</h2>
+            <div class="skills-grid">
+                <!-- Programming Card -->
+                <div class="skill-card reveal-scale">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="skill-title">Programmazione</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C#</span>
+                                <span class="skill-level">Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-level">Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-level">Base</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="50"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Networking</span>
+                                <span class="skill-level">Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Visual Studio & OOP</li>
+                        <li>Arduino & Microcontrollori</li>
+                        <li>Cisco Packet Tracer</li>
+                    </ul>
+                </div>
+
+                <!-- Drones Card -->
+                <div class="skill-card reveal-scale">
+                    <div class="skill-icon">🚁</div>
+                    <h3 class="skill-title">Droni & Videografia Aerea</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Pilotaggio FPV</span>
+                                <span class="skill-level">Avanzato</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Riprese Aeree</span>
+                                <span class="skill-level">Avanzato</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Normative ENAC</span>
+                                <span class="skill-level">Esperto</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>DJI Mini 5 Pro</li>
+                        <li>Certificazioni A1/A3</li>
+                        <li>In preparazione A2</li>
+                    </ul>
+                </div>
+
+                <!-- Video Production Card -->
+                <div class="skill-card reveal-scale">
+                    <div class="skill-icon">🎬</div>
+                    <h3 class="skill-title">Video Production</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">DaVinci Resolve</span>
+                                <span class="skill-level">Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Color Grading</span>
+                                <span class="skill-level">Intermedio</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Adobe Premiere</span>
+                                <span class="skill-level">Avanzato</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">After Effects</span>
+                                <span class="skill-level">Avanzato</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-skill="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Color Correction Professionale</li>
+                        <li>Motion Graphics</li>
+                        <li>Workflow Multi-Monitor</li>
+                    </ul>
+                </div>
+
+                <!-- Electronics Card -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title text-center reveal-fade">Progetti in Evidenza</h2>
+            
+            <!-- Project Filters -->
+            <div class="project-filters reveal-fade">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="drone">Droni</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: C# Application -->
+                <div class="project-card reveal-scale" data-category="programming">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop" alt="C# Project" loading="lazy">
+                        <div class="project-overlay">
+                            <button class="project-btn" onclick="openModal('modal1')">Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">Visual Studio</span>
+                        </div>
+                        <h3 class="project-title">Applicazione Desktop C#</h3>
+                        <p class="project-description">
+                            Sistema gestionale sviluppato in C# utilizzando principi di programmazione object-oriented 
+                            con architettura a classi avanzata.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- Project 3: Drone Footage -->
+                <div class="project-card reveal-scale" data-category="drone video">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&h=600&fit=crop" alt="Drone Footage" loading="lazy">
+                        <div class="project-overlay">
+                            <button class="project-btn" onclick="openModal('modal3')">Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">DJI Mini 5 Pro</span>
+                            <span class="tag">Videografia</span>
+                            <span class="tag">FPV</span>
+                        </div>
+                        <h3 class="project-title">Riprese Aeree Professionali</h3>
+                        <p class="project-description">
+                            Raccolta di riprese aeree realizzate con DJI Mini 5 Pro, combinando pilotaggio FPV 
+                            e tecniche di cinematografia professionale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Color Grading -->
+                <div class="project-card reveal-scale" data-category="video">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop" alt="Color Grading" loading="lazy">
+                        <div class="project-overlay">
+                            <button class="project-btn" onclick="openModal('modal4')">Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">DaVinci Resolve</span>
+                            <span class="tag">Color Grading</span>
+                            <span class="tag">Post-Production</span>
+                        </div>
+                        <h3 class="project-title">Color Grading Showcase</h3>
+                        <p class="project-description">
+                            Portfolio di progetti di color grading e color correction, con esempi before/after 
+                            e workflow professionale multi-monitor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Networking -->
+                <div class="project-card reveal-scale" data-category="programming">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop" alt="Networking" loading="lazy">
+                        <div class="project-overlay">
+                            <button class="project-btn" onclick="openModal('modal5')">Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Cisco</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">DHCP</span>
+                        </div>
+                        <h3 class="project-title">Configurazione Rete Enterprise</h3>
+                        <p class="project-description">
+                            Progetto di configurazione rete complessa con Cisco Packet Tracer, implementazione 
+                            DHCP, subnetting e routing avanzato.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Motion Graphics -->
+                <div class="project-card reveal-scale" data-category="video">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop" alt="Motion Graphics" loading="lazy">
+                        <div class="project-overlay">
+                            <button class="project-btn" onclick="openModal('modal6')">Dettagli</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">After Effects</span>
+                            <span class="tag">Motion Graphics</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                        <h3 class="project-title">Progetto Motion Graphics</h3>
+                        <p class="project-description">
+                            Animazioni e motion graphics realizzate con Adobe After Effects per progetti 
+                            di comunicazione visiva e video production.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-fade">Certificazioni & Formazione</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026 - Presente</div>
+                        <h3>Preparazione Politecnico di Torino</h3>
+                        <p>Studio intensivo per esame di ammissione a Ingegneria Informatica</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>Certificazione Droni A1/A3</h3>
+                        <p>Certificazione ENAC per operazioni droni in categoria aperta A1 e A3</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">In Corso</div>
+                        <h3>Preparazione Certificazione A2</h3>
+                        <p>Studio avanzato normative ENAC per operazioni in scenario standard</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2027</div>
+                        <h3>tecnico informatico - Torino</h3>
+                        <p>Percorso di studi scientifico con focus su matematica, fisica e informatica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-fade">Interessi & Passioni</h2>
+            <div class="interests-grid">
+                <div class="interest-card reveal-scale">
+                    <div class="interest-icon">💪</div>
+                    <h3>Palestra</h3>
+                    <p>Progressione pesistica - disciplina e costanza</p>
+                </div>
+                <div class="interest-card reveal-scale">
+                    <div class="interest-icon">🎲</div>
+                    <h3>Cube Solving</h3>
+                    <p>Risoluzione Cubo di Rubik - problem solving e algoritmi</p>
+                </div>
+                <div class="interest-card reveal-scale">
+                    <div class="interest-icon">🎮</div>
+                    <h3>Gaming Strategico</h3>
+                    <p>Giochi di strategia e board games - pensiero tattico</p>
+                </div>
+                <div class="interest-card reveal-scale">
+                    <div class="interest-icon">🌍</div>
+                    <h3>Lingue</h3>
+                    <p>Miglioramento continuo dell'inglese tecnico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center reveal-fade">Entra in Contatto</h2>
+            <p class="contact-subtitle text-center reveal-fade">
+                Interessato a collaborare o vuoi saperne di più? Scrivimi!
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3>Informazioni</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:samuele.catanzaro@icloud.com">samuele.catanzaro@icloud.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Località</h4>
+                            <p>Torino, Italia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h4>Disponibilità</h4>
+                            <p>Aperto a collaborazioni e progetti</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal-right" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <!-- IMPORTANTE: type="submit" è fondamentale -->
+                    <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Portfolio. Realizzato con passione e dedizione.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals (placeholders) -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+            <h2>Applicazione Desktop C#</h2>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=800&fit=crop" alt="Project details" loading="lazy">
+            <div class="modal-body">
+                <h3>Descrizione Dettagliata</h3>
+                <p>Sistema gestionale completo sviluppato in C# con architettura a tre livelli (Presentation, Business Logic, Data Access). Implementa pattern MVVM e dependency injection per una struttura modulare e manutenibile.</p>
+                
+                <h3>Tecnologie Utilizzate</h3>
+                <ul>
+                    <li>C# .NET Framework</li>
+                    <li>Visual Studio 2022</li>
+                    <li>SQL Server per database</li>
+                    <li>Windows Forms / WPF</li>
+                </ul>
+                
+                <h3>Caratteristiche Principali</h3>
+                <ul>
+                    <li>Architettura Object-Oriented con classi avanzate</li>
+                    <li>Sistema di autenticazione e autorizzazione</li>
+                    <li>CRUD operations complete</li>
+                    <li>Gestione errori robusta</li>
+                </ul>
+                
+                <div class="modal-links">
+                    <a href="#" class="btn btn-primary">Vedi su GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+            <h2>Riprese Aeree Professionali</h2>
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1200&h=800&fit=crop" alt="Drone footage" loading="lazy">
+            <div class="modal-body">
+                <h3>Descrizione</h3>
+                <p>Portfolio di riprese aeree realizzate con DJI Mini 5 Pro, combinando tecniche di pilotaggio FPV e cinematografia professionale per risultati visivamente impattanti.</p>
+                
+                <h3>Equipment</h3>
+                <ul>
+                    <li>DJI Mini 5 Pro</li>
+                    <li>Filtri ND professionali</li>
+                    <li>Extra batteries per sessioni lunghe</li>
+                </ul>
+                
+                <h3>Tecniche Utilizzate</h3>
+                <ul>
+                    <li>Dronie, Orbit, Reveal shots</li>
+                    <li>Pilotaggio FPV manuale</li>
+                    <li>Riprese 4K @ 60fps</li>
+                    <li>Conformità normative ENAC</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+            <h2>Color Grading Showcase</h2>
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop" alt="Color grading" loading="lazy">
+            <div class="modal-body">
+                <h3>Descrizione</h3>
+                <p>Raccolta di progetti di color grading e color correction eseguiti in DaVinci Resolve, dimostrando competenze professionali nella post-produzione video.</p>
+                
+                <h3>Software & Tools</h3>
+                <ul>
+                    <li>DaVinci Resolve Studio</li>
+                    <li>Color wheels & curves</li>
+                    <li>LUT creation & management</li>
+                    <li>Workflow multi-monitor</li>
+                </ul>
+                
+                <h3>Competenze Dimostrate</h3>
+                <ul>
+                    <li>Color correction tecnica</li>
+                    <li>Creative color grading</li>
+                    <li>Skin tone management</li>
+                    <li>Match di scene diverse</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal5')">&times;</button>
+            <h2>Configurazione Rete Enterprise</h2>
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=800&fit=crop" alt="Networking" loading="lazy">
+            <div class="modal-body">
+                <h3>Descrizione</h3>
+                <p>Progetto di configurazione di una rete aziendale complessa utilizzando Cisco Packet Tracer, implementando best practices di networking e sicurezza.</p>
+                
+                <h3>Tecnologie</h3>
+                <ul>
+                    <li>Cisco Packet Tracer</li>
+                    <li>Protocolli: DHCP, DNS, HTTP</li>
+                    <li>Routing & Switching</li>
+                </ul>
+                
+                <h3>Configurazioni Implementate</h3>
+                <ul>
+                    <li>Subnetting e VLSM</li>
+                    <li>DHCP server configuration</li>
+                    <li>Static e dynamic routing</li>
+                    <li>Access Control Lists (ACL)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal6">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal6')">&times;</button>
+            <h2>Progetto Motion Graphics</h2>
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&h=800&fit=crop" alt="Motion graphics" loading="lazy">
+            <div class="modal-body">
+                <h3>Descrizione</h3>
+                <p>Progetto di motion graphics realizzato con Adobe After Effects, combinando animazioni 2D, effetti visivi e tipografia animata.</p>
+                
+                <h3>Software Utilizzato</h3>
+                <ul>
+                    <li>Adobe After Effects</li>
+                    <li>Adobe Illustrator (assets)</li>
+                    <li>Element 3D plugin</li>
+                </ul>
+                
+                <h3>Tecniche Applicate</h3>
+                <ul>
+                    <li>Keyframe animation</li>
+                    <li>Shape layers & masks</li>
+                    <li>Typography animation</li>
+                    <li>Expressions per automazione</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
